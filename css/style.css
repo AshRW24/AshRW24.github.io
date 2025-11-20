@@ -2,9 +2,12 @@
   --main-bg: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);
   --card-bg: rgba(255, 255, 255, 0.85);
   --text-color: #2c3e50;
-  --accent-color: #FF6B9D;
+  --accent-pink: #FF6B9D;
+  --accent-purple: #C77DFF;
+  --accent-yellow: #FFD93D;
+  --accent-green: #4ECDC4;  /* 多巴胺绿 */
+  --accent-lime: #d4e157;   /* 柠檬绿 */
   --link-color: #C77DFF;
-  --hover-color: #FFD93D;
   --border-radius: 20px;
   --shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
 }
@@ -26,7 +29,7 @@ a {
 }
 
 a:hover {
-  color: var(--hover-color);
+  color: var(--accent-yellow);
 }
 
 /* Header */
@@ -42,14 +45,14 @@ header {
 .site-title {
   font-size: 3rem;
   font-weight: 900;
-  color: #FF6B9D;
-  text-shadow: 3px 3px 0px #FFD93D;
+  color: var(--accent-pink);
+  text-shadow: 3px 3px 0px var(--accent-yellow);
   margin: 0;
   letter-spacing: 2px;
 }
 
 .site-subtitle {
-  color: #C77DFF;
+  color: var(--accent-purple);
   font-size: 1.2rem;
   margin-top: 0.5rem;
   font-weight: bold;
@@ -60,7 +63,7 @@ header {
   font-size: 1.4rem;
   color: #2c3e50;
   margin: 1rem 0 0;
-  background: linear-gradient(to right, #FF6B9D, #FFD93D);
+  background: linear-gradient(to right, var(--accent-pink), var(--accent-yellow));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -88,15 +91,94 @@ nav a {
 
 nav a:hover {
   color: #fff;
-  background: #FF6B9D;
-  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+  background: var(--accent-green); /* 绿色导航悬停 */
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
 }
 
 /* Container */
 .container {
-  max-width: 900px;
+  max-width: 1100px; /* 增加宽度以容纳侧边栏 */
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Layout for Post Page (Sidebar) */
+.post-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Responsive: Single column on mobile */
+@media (max-width: 800px) {
+  .post-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none; /* 移动端隐藏侧边目录 */
+  }
+}
+
+/* Sidebar TOC */
+.sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+.toc-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255,255,255,0.6);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.toc-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accent-green);
+  margin-bottom: 1rem;
+  border-bottom: 2px dashed var(--accent-yellow);
+  padding-bottom: 0.5rem;
+}
+
+.toc {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.toc-item {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.toc-link {
+  color: #666;
+  font-size: 0.9rem;
+  display: block;
+  padding: 2px 0;
+  transition: all 0.2s;
+}
+
+.toc-link:hover {
+  color: var(--accent-pink);
+  padding-left: 5px;
+}
+
+.toc-child {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Active TOC link highlight (Simple CSS fallback) */
+.toc-link.active {
+  color: var(--accent-pink);
+  font-weight: bold;
 }
 
 /* Cards */
@@ -114,7 +196,7 @@ nav a:hover {
 .post-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
-  border-color: #FFD93D;
+  border-color: var(--accent-yellow);
 }
 
 .post-title {
@@ -126,11 +208,11 @@ nav a:hover {
 
 .post-title a {
   color: #333;
-  background: linear-gradient(to bottom, transparent 70%, #FFD93D 70%);
+  background: linear-gradient(to bottom, transparent 70%, var(--accent-yellow) 70%); /* 黄色高亮 */
 }
 
 .post-title a:hover {
-  color: #FF6B9D;
+  color: var(--accent-pink);
   background: none;
 }
 
@@ -140,6 +222,7 @@ nav a:hover {
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .post-meta span {
@@ -147,7 +230,8 @@ nav a:hover {
   background: rgba(255, 107, 157, 0.1);
   padding: 5px 10px;
   border-radius: 8px;
-  color: #FF6B9D;
+  color: var(--accent-pink);
+  margin-bottom: 0.5rem;
 }
 
 .post-excerpt {
@@ -191,13 +275,13 @@ figure.highlight {
 
 /* Markdown Content */
 .post-content h1, .post-content h2, .post-content h3 {
-  color: #FF6B9D;
+  color: var(--accent-pink);
   margin-top: 2rem;
 }
 
 .post-content blockquote {
-  border-left: 5px solid #FFD93D;
-  background: rgba(255, 217, 61, 0.15);
+  border-left: 5px solid var(--accent-green); /* 绿色引用 */
+  background: rgba(78, 205, 196, 0.1);
   margin: 1.5rem 0;
   padding: 1.5rem;
   border-radius: 0 15px 15px 0;
@@ -223,18 +307,30 @@ figure.highlight {
   background: rgba(255,255,255,0.9);
   margin: 5px;
   border-radius: 50%;
-  color: #FF6B9D;
+  color: var(--accent-pink);
   font-weight: 800;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   transition: all 0.3s;
 }
 .pagination .page-number:hover, .pagination .extend:hover {
   transform: scale(1.1);
-  background: #FFD93D;
+  background: var(--accent-yellow);
   color: #fff;
 }
 .pagination .current {
-  background: #FF6B9D;
+  background: var(--accent-pink);
   color: white;
   box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-green);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.3);
 }
