@@ -1,226 +1,703 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>真新镇之小智の修行工坊 - 代码修练 | 读书 | 生活</title><meta name="author" content="真新镇之小智"><meta name="copyright" content="真新镇之小智"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="真新镇之小智的个人博客。主修软件工程，探索Linux C++、HPC、Go与Vue3。以修行的态度，记录代码与生活。">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="真新镇之小智">
+  <meta name="keywords" content="C++,Go,Vue3,HPC,SIMD,CUDA,Qt,Linux,软件工程,真新镇之小智">
+  
+    <meta name="description" content="真新镇之小智的个人博客。主修软件工程，探索Linux C++、HPC、Go与Vue3。以修行的态度，记录代码与生活。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="真新镇之小智の修行工坊">
 <meta property="og:url" content="https://ashrw24.github.io/index.html">
 <meta property="og:site_name" content="真新镇之小智の修行工坊">
 <meta property="og:description" content="真新镇之小智的个人博客。主修软件工程，探索Linux C++、HPC、Go与Vue3。以修行的态度，记录代码与生活。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.pinimg.com/originals/c8/e4/6e/c8e46e90529319f1cb845c15e1df703e.jpg">
 <meta property="article:author" content="真新镇之小智">
 <meta property="article:tag" content="C++,Go,Vue3,HPC,SIMD,CUDA,Qt,Linux,软件工程,真新镇之小智">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.pinimg.com/originals/c8/e4/6e/c8e46e90529319f1cb845c15e1df703e.jpg"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "真新镇之小智の修行工坊",
-  "alternateName": [
-    "代码修练 | 读书 | 生活",
-    "ashrw24.github.io"
-  ],
-  "url": "https://ashrw24.github.io/"
-}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ashrw24.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
-
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
+<meta name="twitter:card" content="summary_large_image">
   
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
+  
+  
+  <title>真新镇之小智の修行工坊</title>
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
-      const theme = saveToLocal.get('theme')
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"ashrw24.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"scrollDown":true},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>真新镇之小智</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
   
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '真新镇之小智の修行工坊',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'home'
-}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="web_bg" style="background: [object Object];"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://i.pinimg.com/originals/c8/e4/6e/c8e46e90529319f1cb845c15e1df703e.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-code"></i><span> 修练</span></a></div><div class="menus_item"><a class="site-page" href="/categories/life/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book"></i><span> 读书</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/list/"><i class="fa-fw fas fa-list"></i><span> 清单</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://images.alphacoders.com/133/1330272.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">真新镇之小智の修行工坊</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-code"></i><span> 修练</span></a></div><div class="menus_item"><a class="site-page" href="/categories/life/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></div><div class="menus_item"><a class="site-page" href="/categories/reading/"><i class="fa-fw fas fa-book"></i><span> 读书</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-history"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/list/"><i class="fa-fw fas fa-list"></i><span> 清单</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">真新镇之小智の修行工坊</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/AshRW24" target="_blank" title="fab fa-github"><i class="github"></i></a><a class="social-icon" href="mailto:ashrw24@example.com" target="_blank" title="fas fa-envelope"><i class="email"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2025/11/20/intro/" title="修行之路：我的技术与生活"><img class="post-bg" src="https://i.pinimg.com/originals/c8/e4/6e/c8e46e90529319f1cb845c15e1df703e.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="修行之路：我的技术与生活"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/11/20/intro/" title="修行之路：我的技术与生活"><i class="fas fa-thumbtack sticky"></i>修行之路：我的技术与生活</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T06:40:00.000Z" title="发表于 2025-11-20 14:40:00">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">技术修练</a></span></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/11/20/effective-cpp-notes/" title="Effective C++ 改善程序与设计的55个具体做法"><img class="post-bg" src="https://images.alphacoders.com/133/1330272.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Effective C++ 改善程序与设计的55个具体做法"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/11/20/effective-cpp-notes/" title="Effective C++ 改善程序与设计的55个具体做法">Effective C++ 改善程序与设计的55个具体做法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T07:10:00.000Z" title="发表于 2025-11-20 15:10:00">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">技术修练</a></span></div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2025/11/20/go-learning/" title="Go语言学习笔记：初识并发"><img class="post-bg" src="https://images.alphacoders.com/132/1329478.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go语言学习笔记：初识并发"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/11/20/go-learning/" title="Go语言学习笔记：初识并发">Go语言学习笔记：初识并发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T06:35:00.000Z" title="发表于 2025-11-20 14:35:00">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">技术修练</a></span></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/11/20/vue3-start/" title="Vue3 + Vite 初体验"><img class="post-bg" src="https://images.alphacoders.com/116/1166923.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue3 + Vite 初体验"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/11/20/vue3-start/" title="Vue3 + Vite 初体验">Vue3 + Vite 初体验</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T06:30:00.000Z" title="发表于 2025-11-20 14:30:00">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">技术修练</a></span></div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2025/11/20/reading-note/" title="周末的读书时光：《非暴力沟通》"><img class="post-bg" src="https://images.alphacoders.com/279/279106.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="周末的读书时光：《非暴力沟通》"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/11/20/reading-note/" title="周末的读书时光：《非暴力沟通》">周末的读书时光：《非暴力沟通》</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-11-20T06:25:00.000Z" title="发表于 2025-11-20 14:25:00">2025-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/reading/">读书笔记</a></span></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://i.pinimg.com/originals/c8/e4/6e/c8e46e90529319f1cb845c15e1df703e.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">真新镇之小智</div><div class="author-info-description">真新镇之小智 | 软件工程修行中</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/AshRW24"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/AshRW24" target="_blank" title="fab fa-github"><i class="github"></i></a><a class="social-icon" href="mailto:ashrw24@example.com" target="_blank" title="fas fa-envelope"><i class="email"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的修行工坊！这里是我记录技术成长(Go/Vue3/C++)、分享生活感悟和读书笔记的地方。<br><br><b>核心技术栈：</b><br>Linux C/C++<br>OpenMP & SIMD<br>CUDA & HPC<br>Qt</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/11/20/effective-cpp-notes/" title="Effective C++ 改善程序与设计的55个具体做法"><img src="https://images.alphacoders.com/133/1330272.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Effective C++ 改善程序与设计的55个具体做法"/></a><div class="content"><a class="title" href="/2025/11/20/effective-cpp-notes/" title="Effective C++ 改善程序与设计的55个具体做法">Effective C++ 改善程序与设计的55个具体做法</a><time datetime="2025-11-20T07:10:00.000Z" title="发表于 2025-11-20 15:10:00">2025-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/20/intro/" title="修行之路：我的技术与生活"><img src="https://i.pinimg.com/originals/c8/e4/6e/c8e46e90529319f1cb845c15e1df703e.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="修行之路：我的技术与生活"/></a><div class="content"><a class="title" href="/2025/11/20/intro/" title="修行之路：我的技术与生活">修行之路：我的技术与生活</a><time datetime="2025-11-20T06:40:00.000Z" title="发表于 2025-11-20 14:40:00">2025-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/20/go-learning/" title="Go语言学习笔记：初识并发"><img src="https://images.alphacoders.com/132/1329478.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go语言学习笔记：初识并发"/></a><div class="content"><a class="title" href="/2025/11/20/go-learning/" title="Go语言学习笔记：初识并发">Go语言学习笔记：初识并发</a><time datetime="2025-11-20T06:35:00.000Z" title="发表于 2025-11-20 14:35:00">2025-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/20/vue3-start/" title="Vue3 + Vite 初体验"><img src="https://images.alphacoders.com/116/1166923.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue3 + Vite 初体验"/></a><div class="content"><a class="title" href="/2025/11/20/vue3-start/" title="Vue3 + Vite 初体验">Vue3 + Vite 初体验</a><time datetime="2025-11-20T06:30:00.000Z" title="发表于 2025-11-20 14:30:00">2025-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/20/reading-note/" title="周末的读书时光：《非暴力沟通》"><img src="https://images.alphacoders.com/279/279106.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="周末的读书时光：《非暴力沟通》"/></a><div class="content"><a class="title" href="/2025/11/20/reading-note/" title="周末的读书时光：《非暴力沟通》">周末的读书时光：《非暴力沟通》</a><time datetime="2025-11-20T06:25:00.000Z" title="发表于 2025-11-20 14:25:00">2025-11-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            
-          </div>
-          <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tech/"><span class="card-category-list-name">技术修练</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/reading/"><span class="card-category-list-name">读书笔记</span><span class="card-category-list-count">1</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.1em; color: #999">前端</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 1.1em; color: #999">软件工程</a> <a href="/tags/%E6%84%9F%E6%82%9F/" style="font-size: 1.1em; color: #999">感悟</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 1.1em; color: #999">后端</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 1.1em; color: #999">并发</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 1.1em; color: #999">阅读</a> <a href="/tags/Go/" style="font-size: 1.5em; color: #99a9bf">Go</a> <a href="/tags/Vue3/" style="font-size: 1.5em; color: #99a9bf">Vue3</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C++</a> <a href="/tags/Effective-C/" style="font-size: 1.1em; color: #999">Effective C++</a> <a href="/tags/Vite/" style="font-size: 1.1em; color: #999">Vite</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 1.1em; color: #999">心理学</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/" style="font-size: 1.1em; color: #999">个人简介</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>归档</span>
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="以修行的态度，探索代码与生活"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/11/20/intro/" target="_self">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" srcset="/img/loading.gif" lazyload alt="修行之路：我的技术与生活">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/2025/11/20/intro/" target="_self">
+          修行之路：我的技术与生活
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2025/11/20/intro/" target="_self">
+        <div>
+          👋 欢迎来到真新镇之小智的修行工坊   "以修行的态度，探索代码与生活"   🧘‍♂️ 修行者档案你好！我是 真新镇之小智。2024年本科毕业，主修 软件工程。 我相信编程不仅是一门技术，更是一种修行。在这里，我记录从新手到专家的每一步探索。 🛠️ 技能树 (Tech Stack)🏔️ 核心修练 (The Core) 专注于高性能计算与底层原理   语言: Linux C &#x2F
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-20 14:40" pubdate>
+              2025-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <ul class="card-archive-list">
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/tech/" class="category-chain-item">技术修练</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/">#个人简介</a>
+            
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">#软件工程</a>
+            
+              <a href="/tags/Go/">#Go</a>
+            
+              <a href="/tags/Vue3/">#Vue3</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/11/20/effective-cpp-notes/" target="_self">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" srcset="/img/loading.gif" lazyload alt="Effective C++ 改善程序与设计的55个具体做法">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/20/effective-cpp-notes/" target="_self">
+          Effective C++ 改善程序与设计的55个具体做法
+        </a>
+      </h2>
+
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/11/">
-            <span class="card-archive-list-date">
-              十一月 2025
-            </span>
-            <span class="card-archive-list-count">5</span>
-          </a>
-        </li>
+      <a class="index-excerpt " href="/2025/11/20/effective-cpp-notes/" target="_self">
+        <div>
+          Effective C++ 改善程序与设计的55个具体做法条款01： 视C++为一个语言联邦 （View C++ as a federation of languages）  🔍 核心观点C++不是一门单纯的语言，而是由四个相互关联但各有特色的子语言组成的联邦。理解这种分层结构是掌握现代C++的关键，因为高效编程守则会根据你使用的C++子语言部分而变化。认识到这四个子语言的特点和适用场景，能帮助
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-20 15:10" pubdate>
+              2025-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/tech/" class="category-chain-item">技术修练</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/C/">#C++</a>
+            
+              <a href="/tags/Effective-C/">#Effective C++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/11/20/go-learning/" target="_self">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" srcset="/img/loading.gif" lazyload alt="Go语言学习笔记：初识并发">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/20/go-learning/" target="_self">
+          Go语言学习笔记：初识并发
+        </a>
+      </h2>
+
       
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-11-20T07:07:24.917Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2025 By 真新镇之小智</span></div><div class="footer_custom_text">修身 齐家 治国 写代码</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"><script>window.typedJSFn = {
-  init: str => {
-    window.typed = new Typed('#subtitle', Object.assign({
-      strings: str,
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: true,
-      backSpeed: 50,
-    }, null))
-  },
-  run: subtitleType => {
-    if (true) {
-      if (typeof Typed === 'function') {
-        subtitleType()
-      } else {
-        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
-      }
-    } else {
-      subtitleType()
-    }
-  },
-  processSubtitle: (content, extraContents = []) => {
-    if (true) {
-      const sub = ["以修行的态度，探索代码与生活","主修软件工程 | 后端Go | 前端Vue3","Linux C++ | HPC | CUDA | Qt"].slice()
+      <a class="index-excerpt " href="/2025/11/20/go-learning/" target="_self">
+        <div>
+          🚀 为什么要学 Go？作为一个 C++ 背景的开发者，转向 Go 的过程非常有趣。Go 的并发模型 (Goroutines + Channels) 让高并发编程变得异常简单…  (这里预留写作空间，未来填充具体的学习笔记)  123456789101112131415161718package mainimport (	&quot;fmt&quot;	&quot;time&quot;)func
+        </div>
+      </a>
 
-      if (extraContents.length > 0) {
-        sub.unshift(...extraContents)
-      }
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-20 14:35" pubdate>
+              2025-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
 
-      if (typeof content === 'string') {
-        sub.unshift(content)
-      } else if (Array.isArray(content)) {
-        sub.unshift(...content)
-      }
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/tech/" class="category-chain-item">技术修练</a>
+  
+  
 
-      sub.length > 0 && typedJSFn.init(sub)
-    } else {
-      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
-        (Array.isArray(content) && content.length > 0 ? content[0] : '')
-    }
-  }
-}
-btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
-</script><script>function subtitleType () {
-  typedJSFn.processSubtitle(["以修行的态度，探索代码与生活","主修软件工程 | 后端Go | 前端Vue3","Linux C++ | HPC | CUDA | Qt"])
-}
-typedJSFn.run(subtitleType)</script></div><script async data-pjax src="/"></script></div></body></html>
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Go/">#Go</a>
+            
+              <a href="/tags/%E5%90%8E%E7%AB%AF/">#后端</a>
+            
+              <a href="/tags/%E5%B9%B6%E5%8F%91/">#并发</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/11/20/vue3-start/" target="_self">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" srcset="/img/loading.gif" lazyload alt="Vue3 + Vite 初体验">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/20/vue3-start/" target="_self">
+          Vue3 + Vite 初体验
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2025/11/20/vue3-start/" target="_self">
+        <div>
+          ✨ 组合式 API 的魅力从 Vue2 的 Options API 转换到 Vue3 的 Composition API，感觉代码组织更加逻辑化了…  (这里预留写作空间，未来填充前端开发心得)  123456789&lt;script setup&gt;import &#123; ref &#125; from &#x27;vue&#x27;const count = ref(0)&lt;/sc
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-20 14:30" pubdate>
+              2025-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/tech/" class="category-chain-item">技术修练</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue3/">#Vue3</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+            
+              <a href="/tags/Vite/">#Vite</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2025/11/20/reading-note/" target="_self">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" srcset="/img/loading.gif" lazyload alt="周末的读书时光：《非暴力沟通》">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/20/reading-note/" target="_self">
+          周末的读书时光：《非暴力沟通》
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2025/11/20/reading-note/" target="_self">
+        <div>
+          📖 阅读感悟最近读了《非暴力沟通》，深受启发。作为程序员，我们习惯了与机器打交道，追求逻辑的严密，但在与人交流时，往往忽略了情感的连接…  (这里预留写作空间，记录更多读书心得)
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-20 14:25" pubdate>
+              2025-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/reading/" class="category-chain-item">读书笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%98%85%E8%AF%BB/">#阅读</a>
+            
+              <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/">#心理学</a>
+            
+              <a href="/tags/%E6%84%9F%E6%82%9F/">#感悟</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> <span>愿代码与你同在</span> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
