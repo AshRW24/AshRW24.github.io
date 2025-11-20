@@ -6,17 +6,18 @@
   <title>helloworld | 真新镇之小智の修行工坊</title>
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <meta name="generator" content="Hexo 8.1.1"></head>
 <body>
+  <div id="reading-progress-bar"></div>
+  
   <div class="floating-bubble" style="width: 100px; height: 100px; top: 10%; left: 10%; background: rgba(255, 107, 157, 0.2);"></div>
   <div class="floating-bubble" style="width: 150px; height: 150px; top: 40%; right: 10%; background: rgba(255, 217, 61, 0.2); animation-delay: 2s;"></div>
   <div class="floating-bubble" style="width: 80px; height: 80px; bottom: 20%; left: 30%; background: rgba(78, 205, 196, 0.2); animation-delay: 4s;"></div>
 
   <header>
     <div class="container">
-      <h1 class="site-title"><a href="/" style="color: #FF6B9D;">真新镇之小智の修行工坊</a></h1>
+      <h1 class="site-title"><a href="/">真新镇之小智の修行工坊</a></h1>
       <p class="site-subtitle">代码修练 | 读书 | 生活</p>
       <p class="site-motto">悟已往之不谏，知来者之可追 🍃</p>
       <nav>
@@ -47,6 +48,46 @@
     <p>&copy; 2025 真新镇之小智</p>
     <p>修身 · 齐家 · 治国 · 写代码 ✨</p>
   </footer>
+
+  <div id="back-to-top" title="回到顶部"><i class="fas fa-arrow-up"></i></div>
+
+  <script>
+    // Back to Top
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+      
+      // Reading Progress
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+      document.getElementById('reading-progress-bar').style.width = scrolled + '%';
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Code Copy
+    document.querySelectorAll('figure.highlight').forEach(block => {
+      const btn = document.createElement('div');
+      btn.className = 'copy-btn';
+      btn.innerHTML = '<i class="far fa-copy"></i>';
+      block.appendChild(btn);
+      
+      btn.addEventListener('click', () => {
+        const code = block.querySelector('td.code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          btn.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => btn.innerHTML = '<i class="far fa-copy"></i>', 2000);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
