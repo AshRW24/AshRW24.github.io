@@ -129,48 +129,50 @@ nav a:hover {
   box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
 }
 
-/* Main Container Layout */
+/* Main Container Layout - Left Sidebar */
 .container {
-  max-width: 1200px;
+  max-width: 1300px; /* Wider container for wider sidebar */
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .main-layout {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 350px 1fr; /* Sidebar Left, Content Right */
   gap: 2rem;
   align-items: start;
 }
+
+/* Force Sidebar to Left using order if DOM order is Content first */
+.sidebar { order: 1; }
+.content-wrap { order: 2; min-width: 0; }
 
 @media (max-width: 900px) {
   .main-layout {
     grid-template-columns: 1fr;
   }
-  .sidebar {
-    display: none; /* Hide sidebar completely on mobile for cleaner look, or move to bottom */
+  /* On mobile, content first, sidebar bottom */
+  .sidebar { order: 2; margin-top: 2rem; }
+  .content-wrap { order: 1; }
+  
+  .sidebar .card-toc, .sidebar .card-recent {
+    display: none;
   }
 }
 
-.content-wrap {
-  min-width: 0;
-}
-
-/* Sidebar Styling - FIXED SCROLLING AND STICKY */
+/* Sidebar Styling */
 .sidebar {
   position: sticky;
   top: 20px;
-  height: calc(100vh - 40px); /* Full viewport height minus padding */
-  overflow-y: auto; /* Allow sidebar to scroll independently */
-  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  scrollbar-width: thin;
   padding-bottom: 20px;
 }
 
-/* Sidebar scrollbar styling */
 .sidebar::-webkit-scrollbar { width: 4px; }
 .sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 4px; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
-
 
 .card-widget {
   background: var(--card-bg);
@@ -198,13 +200,14 @@ nav a:hover {
 }
 
 /* Author Card */
-.card-author { text-align: center; }
-.author-img-box { margin-bottom: 1rem; }
+.card-author { text-align: center; padding-top: 0; overflow: hidden; } /* Remove padding for cover image */
+.author-img-box { margin-bottom: 1rem; position: relative; }
 .author-img {
   width: 100px; height: 100px; border-radius: 50%;
-  border: 4px solid rgba(255,255,255,0.8);
+  border: 4px solid #fff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.5s;
+  background: #fff;
 }
 .author-img:hover { transform: rotate(360deg); }
 .author-name { font-size: 1.4rem; font-weight: bold; color: var(--accent-blue); }
@@ -218,13 +221,6 @@ nav a:hover {
 .data-item { margin: 0 15px; }
 .data-num { font-weight: bold; color: var(--accent-pink); font-size: 1.1rem; }
 .data-name { font-size: 0.8rem; color: #999; }
-.btn-follow {
-  display: block; margin-top: 1rem; background: var(--accent-pink);
-  color: white; padding: 8px; border-radius: 20px; font-weight: bold; transition: all 0.3s;
-}
-.btn-follow:hover {
-  background: var(--accent-purple); color: white; box-shadow: 0 5px 15px rgba(199, 125, 255, 0.4);
-}
 
 /* Tag Cloud */
 .tag-cloud a {
@@ -244,7 +240,7 @@ nav a:hover {
 }
 .recent-list li:last-child { border-bottom: none; }
 
-/* TOC - STRICT CONTROL */
+/* TOC */
 .toc { padding: 0; list-style: none; margin: 0; }
 .toc-child { padding-left: 1rem; }
 .toc-link { 
@@ -256,14 +252,13 @@ nav a:hover {
 .toc-link:hover { color: var(--accent-pink); padding-left: 5px; }
 .toc-link.active { color: var(--accent-pink); font-weight: bold; border-left: 3px solid var(--accent-pink); padding-left: 10px; background: rgba(255, 107, 157, 0.05); }
 
-/* HIDE DEEP LEVELS: Only show Level 1 and 2 (usually H2 and H3 in hexo context, or H1/H2) */
-/* Assuming user wants to hide anything deeper than the main points */
+/* HIDE DEEP LEVELS */
 .toc-level-3, .toc-level-4, .toc-level-5, .toc-level-6 {
   display: none !important;
 }
 
 .card-toc {
-  max-height: none; /* Let sidebar handle scroll */
+  max-height: none;
   overflow: visible; 
 }
 
