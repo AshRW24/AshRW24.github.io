@@ -238,12 +238,27 @@ nav a:hover {
 }
 .recent-list li:last-child { border-bottom: none; }
 
-/* TOC */
-.toc { padding: 0; list-style: none; }
-.toc-child { padding-left: 1rem; }
-.toc-link { color: #666; display: block; padding: 3px 0; }
-.toc-link:hover { color: var(--accent-pink); }
-.toc-link.active { color: var(--accent-pink); font-weight: bold; }
+/* TOC - Improved for Scrolling */
+.toc { padding: 0; list-style: none; margin: 0; }
+.toc-child { display: none !important; } /* Force hide nested items */
+.toc-link { 
+  color: #666; display: block; padding: 8px 0; 
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  font-size: 0.95rem;
+}
+.toc-link:hover { color: var(--accent-pink); padding-left: 5px; }
+.toc-link.active { color: var(--accent-pink); font-weight: bold; border-left: 3px solid var(--accent-pink); padding-left: 10px; background: rgba(255, 107, 157, 0.05); }
+
+.card-toc {
+  max-height: 75vh; /* Limit height */
+  overflow-y: auto; /* Enable internal scroll */
+  padding-right: 5px; /* Prevent scrollbar overlap */
+}
+
+/* Custom Scrollbar for TOC */
+.card-toc::-webkit-scrollbar { width: 6px; }
+.card-toc::-webkit-scrollbar-thumb { background: var(--accent-green); border-radius: 3px; }
+.card-toc::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
 
 /* List View for Index */
 .post-item.list-view {
