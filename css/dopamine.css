@@ -1,0 +1,115 @@
+/* Global Dopamine Gradient Background */
+body {
+  background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 50%, #a18cd1 100%) !important;
+  background-attachment: fixed !important;
+}
+
+#web_bg {
+  background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 50%, #a18cd1 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Glassmorphism Cards for "Dopamine" feel */
+#aside-content .card-widget,
+#recent-posts > .recent-post-item,
+.layout > .recent-posts .pagination > .page-number,
+.layout > .recent-posts .pagination > .extend,
+.layout > div:first-child:not(.recent-posts),
+#page,
+#archive,
+#tag,
+#category,
+.post-content,
+.post-bg {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px !important;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects - Vibrant Pop */
+#aside-content .card-widget:hover,
+#recent-posts > .recent-post-item:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 45px 0 rgba(255, 105, 180, 0.3) !important;
+  border-color: #FFD93D;
+}
+
+/* Navbar */
+#nav {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+
+#nav a {
+  color: #555;
+  font-weight: bold;
+}
+
+#nav a:hover {
+  color: #FF6B9D !important;
+}
+
+/* Footer */
+#footer {
+  background: transparent !important;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+#footer a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Titles */
+.article-title {
+  color: #333;
+  font-weight: 800;
+}
+.article-title:hover {
+  color: #FF6B9D !important;
+}
+
+/* Sidebar Author Info */
+#aside-content .card-info .author-info__name {
+  color: #FF6B9D;
+  font-weight: bold;
+}
+
+#aside-content .card-info .author-info__description {
+  color: #666;
+}
+
+/* Social Icons */
+.card-info .card-info-social-icons .social-icon {
+  color: #C77DFF;
+  transition: all 0.3s;
+}
+.card-info .card-info-social-icons .social-icon:hover {
+  color: #FFD93D;
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #FF6B9D !important;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.4) 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
