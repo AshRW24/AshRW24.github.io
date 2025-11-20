@@ -72,7 +72,7 @@ header {
 
 .site-motto {
   font-family: 'KaiTi', 'STKaiti', serif;
-  font-size: 2.2rem; /* Enlarged */
+  font-size: 2.2rem;
   color: #2c3e50;
   margin: 1.5rem 0;
   background: linear-gradient(to right, var(--accent-pink), var(--accent-yellow));
@@ -313,38 +313,58 @@ nav a:hover {
   margin: 1.5rem 0; padding: 1.5rem; border-radius: 0 15px 15px 0; color: #555;
 }
 
-/* Code Highlight - Light Theme */
+/* Code Highlight - Window Style */
 figure.highlight {
-  background: #fffbf0 !important; /* Warm light background */
-  border: 2px solid #eee;
-  color: #333;
-  border-radius: 10px;
-  padding-top: 2.5rem;
+  background: #f6f8fa !important; /* Light Grey Background */
+  border: 1px solid #d1d5da;
+  color: #24292e;
+  border-radius: 12px;
+  padding-top: 35px; /* Space for header bar */
   position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin: 2rem 0;
+  overflow: hidden;
 }
 
-/* Mac Style Dots */
+/* Header Bar */
 figure.highlight::before {
-  content: ''; position: absolute; top: 15px; left: 15px; width: 12px; height: 12px;
+  content: '';
+  position: absolute; top: 0; left: 0; width: 100%; height: 35px;
+  background: #e1e4e8;
+  border-bottom: 1px solid #d1d5da;
+  z-index: 1;
+}
+
+/* Mac Dots */
+figure.highlight::after {
+  content: '';
+  position: absolute; top: 12px; left: 15px; width: 12px; height: 12px;
   background: #ff5f56; border-radius: 50%;
   box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+  z-index: 2;
 }
 
-figure.highlight .code .comment { color: #999; font-style: italic; }
-figure.highlight .code .keyword { color: #d73a49; font-weight: bold; } /* Red/Pink */
-figure.highlight .code .string { color: #032f62; } /* Dark Blue */
-figure.highlight .code .number { color: #e36209; } /* Orange */
-figure.highlight .code .function { color: #6f42c1; } /* Purple */
-figure.highlight .code .title { color: #6f42c1; }
-figure.highlight .code .built_in { color: #005cc5; }
-figure.highlight .code .attr { color: #22863a; }
+figure.highlight table {
+  margin: 0 !important;
+  position: relative;
+  z-index: 0;
+}
+
+/* Code Text Colors - High Contrast */
+figure.highlight .code .comment { color: #6a737d; font-style: italic; }
+figure.highlight .code .keyword { color: #d73a49; font-weight: bold; }
+figure.highlight .code .string { color: #032f62; }
+figure.highlight .code .number { color: #005cc5; }
+figure.highlight .code .function { color: #6f42c1; font-weight: bold; }
+figure.highlight .code .title { color: #22863a; font-weight: bold; }
+figure.highlight .code .params { color: #24292e; }
+figure.highlight .code .class { color: #6f42c1; }
 
 .copy-btn {
-  position: absolute; top: 5px; right: 10px; color: #ccc; cursor: pointer; font-size: 0.9rem; transition: color 0.3s;
+  position: absolute; top: 7px; right: 10px; color: #666; cursor: pointer;
+  font-size: 0.9rem; transition: color 0.3s; z-index: 3;
 }
-.copy-btn:hover { color: #666; }
+.copy-btn:hover { color: #000; }
 
 /* Footer */
 footer { text-align: center; padding: 3rem; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); font-weight: bold; }
