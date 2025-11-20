@@ -31,7 +31,7 @@ a:hover {
 
 /* Header */
 header {
-  padding: 2rem 0;
+  padding: 3rem 0;
   text-align: center;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
@@ -40,49 +40,56 @@ header {
 }
 
 .site-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #FF6B9D;
-  text-shadow: 2px 2px 0px #FFD93D;
+  text-shadow: 3px 3px 0px #FFD93D;
   margin: 0;
+  letter-spacing: 2px;
 }
 
 .site-subtitle {
   color: #C77DFF;
   font-size: 1.2rem;
   margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.site-motto {
+  font-family: 'KaiTi', 'STKaiti', serif;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin: 1rem 0 0;
+  background: linear-gradient(to right, #FF6B9D, #FFD93D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 nav {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 nav a {
   margin: 0 15px;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 1.1rem;
   color: #555;
   position: relative;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 nav a:hover {
-  color: #FF6B9D;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  bottom: -5px;
-  left: 0;
-  background-color: #FFD93D;
-  transition: width 0.3s;
-  border-radius: 2px;
-}
-
-nav a:hover::after {
-  width: 100%;
+  color: #fff;
+  background: #FF6B9D;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
 }
 
 /* Container */
@@ -95,7 +102,7 @@ nav a:hover::after {
 /* Cards */
 .post-item, .post-content {
   background: var(--card-bg);
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   margin-bottom: 2rem;
@@ -105,39 +112,53 @@ nav a:hover::after {
 }
 
 .post-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
   border-color: #FFD93D;
 }
 
 .post-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-top: 0;
   color: #333;
+  margin-bottom: 1rem;
 }
 
 .post-title a {
   color: #333;
+  background: linear-gradient(to bottom, transparent 70%, #FFD93D 70%);
 }
 
 .post-title a:hover {
   color: #FF6B9D;
+  background: none;
 }
 
 .post-meta {
-  color: #999;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .post-meta span {
-  margin-right: 15px;
+  margin-right: 20px;
+  background: rgba(255, 107, 157, 0.1);
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #FF6B9D;
+}
+
+.post-excerpt {
+  color: #555;
+  font-size: 1.05rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   font-weight: bold;
@@ -146,10 +167,11 @@ footer {
 /* Code Highlight Override */
 figure.highlight {
   background: #282c34;
-  border-radius: 10px;
-  padding: 1rem;
+  border-radius: 15px;
+  padding: 1.5rem;
   color: #abb2bf;
   overflow-x: auto;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
 /* Dopamine Elements */
@@ -170,39 +192,49 @@ figure.highlight {
 /* Markdown Content */
 .post-content h1, .post-content h2, .post-content h3 {
   color: #FF6B9D;
+  margin-top: 2rem;
 }
 
 .post-content blockquote {
   border-left: 5px solid #FFD93D;
-  background: rgba(255, 217, 61, 0.1);
+  background: rgba(255, 217, 61, 0.15);
   margin: 1.5rem 0;
-  padding: 1rem;
-  border-radius: 0 10px 10px 0;
+  padding: 1.5rem;
+  border-radius: 0 15px 15px 0;
+  font-style: italic;
+  color: #555;
 }
 
 .post-content img {
   max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 5px solid rgba(255,255,255,0.5);
 }
 
 /* Pagination */
 .pagination {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .pagination .page-number, .pagination .extend {
   display: inline-block;
-  padding: 10px 15px;
-  background: rgba(255,255,255,0.8);
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.9);
   margin: 5px;
   border-radius: 50%;
   color: #FF6B9D;
-  font-weight: bold;
+  font-weight: 800;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+.pagination .page-number:hover, .pagination .extend:hover {
+  transform: scale(1.1);
+  background: #FFD93D;
+  color: #fff;
 }
 .pagination .current {
   background: #FF6B9D;
   color: white;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
 }
-
